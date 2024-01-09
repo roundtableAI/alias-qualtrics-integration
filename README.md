@@ -9,9 +9,11 @@ If you have questions or issues with integration, feel free to contact us at [su
 Follow these steps to integrate Alias with Qualtrics:
 
 1. **Add up Javascript Tracker:** Our [Qualtrics javascript tracker](qualtrics-tracker.js) generates a history of every change made for each open-ended textbox. To use this tracker, simply paste the code into the "Javascript" block for any open-ended question (you must have at least one open-ended question to call the Alias API).
+
 ![Javascript tracker animation](gifs/js-tracker.gif)
 
 2. **Add an embedded data field:** Add an embedded data field called `alias_data` to your survey.
+
 ![Javascript tracker animation](gifs/embedded-data.gif)
 
 3. **Run your survey:** All of the data needed for the Alias API will be stored in the `alias_data` embedded data field.
