@@ -7,7 +7,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-
 def remove_empty_responses(alias_data):
     # Remove keys for responses that are empty
     new_alias_data = { 'responses': {}, 'question_histories': {}, 'questions': {} }
@@ -37,7 +36,7 @@ def call_api(alias_data,participant_id,survey_id,api_key):
 
     # Make request and check outcome
     raw_response = requests.post(
-        'https://roundtable.ai/.netlify/functions/alias-v011',
+        'https://roundtable.ai/api/alias/v011',
         json=body,
         headers=headers
     )
