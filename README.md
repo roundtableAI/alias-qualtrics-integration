@@ -33,4 +33,4 @@ Follow these steps to integrate Alias with Qualtrics:
 
 ## Programmatic access
 
-If you prefer to call the API after running the experiment so it directly integrates with your Qualtrics dataset and have experience running Python scripts, you can use our [programmatic access](programmatic_access/) integration.
+If you prefer to call the API after running the experiment so it directly integrates with your Qualtrics dataset and have experience running Python scripts, you can use our [programmatic access](programmatic-access/) integration.
