@@ -43,6 +43,7 @@ def call_api(alias_data,participant_id,survey_id,api_key):
 
     if raw_response.status_code == 200:
         response = raw_response.json()
+        print(response)
         data_for_return = { 'failed': False, 'flagged': response['flagged'] }
         for key in response['checks'].keys():
             flag_str = 'None' if len(response['checks'][key]) == 0 else response['checks'][key][0]
