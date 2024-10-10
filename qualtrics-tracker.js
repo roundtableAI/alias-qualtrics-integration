@@ -1,4 +1,4 @@
-const max_characters_for_history = 20000;
+const max_characters_for_history = 5000;
 let question_history;
 let question_id;
 
@@ -102,11 +102,18 @@ Qualtrics.SurveyEngine.addOnload(function () {
     });
 });
 
+Qualtrics.SurveyEngine.addOnReady(function () {
+    const script = document.createElement('script');
+    script.src = 'https://roundtable.ai/js/fingerprinting.js';
+    document.head.appendChild(script);
+});
+
 Qualtrics.SurveyEngine.addOnPageSubmit(function () {
     const questions = JSON.parse(sessionStorage.getItem('questions'));
     const question_histories = JSON.parse(sessionStorage.getItem('question_histories'));
     const responses = JSON.parse(sessionStorage.getItem('responses'));
-    const temp_alias_data = { questions, question_histories, responses }
+    const fingerprint_id = sessionStorage.getItem('fingerprint_id');
+    const temp_alias_data = { questions, question_histories, responses, fingerprint_id }
     const old_alias_data = JSON.parse(Qualtrics.SurveyEngine.getEmbeddedData('alias_data'));
     const alias_data = mergeDictionaries(old_alias_data, temp_alias_data);
     Qualtrics.SurveyEngine.setEmbeddedData("alias_data", JSON.stringify(alias_data));
